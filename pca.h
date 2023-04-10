@@ -18,7 +18,12 @@ namespace pca_class
     EIGEN_MAKE_ALIGNED_OPERATOR_NEW
 
     // constructor. data is nxd with n data points and d features
-    pca(MatrixXd* data_ptr): data_ptr{data_ptr}, dim{data_ptr->rows(), data_ptr->cols()} { }
+    pca(MatrixXd* data_ptr): data_ptr{data_ptr}, dim{data_ptr->rows(), data_ptr->cols()}
+    {
+      computed_cov = false;
+      computed_eigen = false;
+      sorted_eigen = false;
+    }
 
     // displays data in matrix form
     void display() { cout << "data =\n" << *data_ptr << endl; }
@@ -80,7 +85,7 @@ namespace pca_class
     void sort_eigen() 
     {
       if (!computed_eigen) { compute_eigen(); }
-      if (sorted_eigen) { cout << "\nloser\n" << endl; return; }
+      if (sorted_eigen) { return; }
       eigen tmp(eigenval, eigenvec);
       tmp.sort();
       eigenval = tmp.get_val();

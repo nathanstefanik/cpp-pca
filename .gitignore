@@ -1,6 +1,8 @@
 # Created by https://www.toptal.com/developers/gitignore/api/macos,linux,c++
 # Edit at https://www.toptal.com/developers/gitignore?templates=macos,linux,c++
 
+pca
+main
 test.cpp
 test
 test2.cpp
