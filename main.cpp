@@ -30,6 +30,10 @@ int main()
   pca haha(&my_data);
   //haha.display();
   cout << "haha.get_cov() =\n" << haha.get_cov() << '\n';
+  haha.sort_eigen();
+  cout << "\nsorted\n";
+  cout << "haha.get_eigenval() =\n" << haha.get_eigenval() << '\n';
+  cout << "haha.get_eigenvec() =\n" << haha.get_eigenvec() << endl;
   MatrixXd reduced = haha.transform(2);
   //cout << "reduced =\n" << reduced << endl;
   to_csv(reduced, "reduced.csv");

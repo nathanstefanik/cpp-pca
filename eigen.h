@@ -28,7 +28,7 @@ public:
     std::vector<pair<double, VectorXd>> eigen_pairs;
     for (int i = 0; i < dim; i++)
     {
-      pair<double, VectorXd> curr(val(i), vec.row(i)); 
+      pair<double, VectorXd> curr(val(i), vec.col(i)); 
       eigen_pairs.push_back(curr);
     }
     

@@ -52,7 +52,7 @@ namespace pca_class
       Eigen::EigenSolver<Eigen::MatrixXd> eigensolver;
       eigensolver.compute(cov);
       eigenval = eigensolver.eigenvalues().real();
-      eigenvec = eigensolver.eigenvectors().real();
+      eigenvec = eigensolver.eigenvectors().real(); // columns are eigenvectors!
       computed_eigen = true;
       sorted_eigen = false;
     }
